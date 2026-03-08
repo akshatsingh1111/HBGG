@@ -1,0 +1,437 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* tsParticles container */
+#tsparticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Music Controls */
+#musicControls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+#musicControls button {
+    background: #bfd1d6;
+    color: #ea37db;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+#hero {
+    position: relative;
+    height: 100vh;
+    background: url("./images/hero.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgba(234, 223, 223, 0.822);
+    overflow: hidden;
+    animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+/* Cinematic Overlay */
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(19, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.4),
+        rgba(136, 135, 127, 0.8)
+    );
+    z-index: 1;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(232, 225, 38, 0.8);
+    z-index: 2;
+    animation: fadeUp 2s ease forwards;
+}
+
+#hero p {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    opacity: 0.9;
+    z-index: 2;
+    animation: fadeUp 3s ease forwards;
+}
+
+#hero button {
+    margin-top: 25px;
+    padding: 14px 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff4d88, #ff1a75);
+    color: white;
+    box-shadow: 0 0 20px rgba(253, 96, 148, 0.8);
+    transition: 0.4s ease;
+    z-index: 2;
+}
+
+#hero button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgb(255, 82, 140);
+}
+
+/* GALLERY SECTION */
+#gallery {
+    padding: 70px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        180deg,
+        #0f0c29,
+        #302b63,
+        #24243e
+    );
+
+    color: rgb(255, 255, 255);
+}
+
+#gallery h2 {
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+    color: #f8eeee;
+    text-shadow: 0 0 12px rgba(249, 243, 60, 0.7);
+}
+
+/* HORIZONTAL SLIDER */
+.carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;   /* important fix */
+}
+
+/* Make sure first image starts fully visible */
+.carousel img:first-child {
+    margin-left: 20px;
+}
+
+/* Scrollbar Styling */
+.carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff4d88, #ff1a75);
+    border-radius: 10px;
+}
+
+.carousel::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Images */
+.carousel img {
+    min-width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.carousel img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 77, 136, 0.8);
+}
+
+/* LIGHTBOX */
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+}
+
+.lightbox-content {
+    text-align: center;
+    animation: zoomIn 0.25s ease-in-out;
+}
+
+#lightbox-img {
+    width: 80%;
+    max-width: 900px;
+    border-radius: 12px;
+}
+
+#photoTrack {
+    margin-top: 12px;
+    width: 80%;
+}
+
+.close-btn {
+    margin-top: 12px;
+    padding: 10px 22px;
+    background: #ff4081;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* ANIMATIONS */
+@keyframes zoomIn {
+    from { transform: scale(0.6); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slowZoom {
+    from { background-size: 100%; }
+    to { background-size: 110%; }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    user-select: none;
+}
+
+.arrow:hover {
+    background: rgba(255, 64, 129, 0.8);
+}
+
+.arrow.left {
+    left: 30px;
+}
+
+.arrow.right {
+    right: 30px;
+}
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.floating-hearts span {
+    position: absolute;
+    color: rgba(255, 77, 136, 0.6);
+    font-size: 22px;
+    animation: floatHeart 10s linear infinite;
+}
+
+/* Random positions */
+.floating-hearts span:nth-child(1) { left:10%; animation-duration:8s; }
+.floating-hearts span:nth-child(2) { left:25%; animation-duration:12s; }
+.floating-hearts span:nth-child(3) { left:40%; animation-duration:9s; }
+.floating-hearts span:nth-child(4) { left:55%; animation-duration:11s; }
+.floating-hearts span:nth-child(5) { left:70%; animation-duration:7s; }
+.floating-hearts span:nth-child(6) { left:85%; animation-duration:10s; }
+.floating-hearts span:nth-child(7) { left:95%; animation-duration:13s; }
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-120%);
+        opacity: 0;
+    }
+}
+.memory-hint {
+    font-size: 16px;
+    color: #ffd1dc;
+    margin-bottom: 25px;
+    font-style: italic;
+    animation: hintGlow 3s ease-in-out infinite;
+}
+
+/* Soft glow effect */
+@keyframes hintGlow {
+
+    0% {
+        opacity: 0.6;
+        transform: translateY(0);
+        text-shadow: 0 0 5px rgba(255, 105, 180, 0.4);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-4px);
+        text-shadow: 0 0 12px rgba(255, 105, 180, 0.9);
+    }
+
+    100% {
+        opacity: 0.6;
+        transform: translateY(0);
+        text-shadow: 0 0 5px rgba(255, 105, 180, 0.4);
+    }
+
+}
+#prettiest {
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(
+        180deg,
+        #fafafa,
+        #d1d6e6,
+        #0f3460
+    );
+}
+
+#prettiest h2 {
+    font-size: 2.6rem;
+    color: #ff4d88;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255,77,136,0.7);
+}
+
+.beauty-text {
+    font-size: 16px;
+    color: #ffd6e0;
+    margin-bottom: 35px;
+    font-style: italic;
+}
+/* Section background */
+#prettiest{
+position:relative;
+padding:80px 0;
+text-align:center;
+background:linear-gradient(180deg,#5d5d9f,#2d364a,#a4b8cf);
+overflow:hidden;
+}
+
+/* Title glow */
+#prettiest h2{
+font-size:2.6rem;
+color:#ff4d88;
+text-shadow:0 0 12px rgba(255,77,136,0.8);
+margin-bottom:15px;
+}
+
+/* Soft glow on images */
+#prettiest img{
+border-radius:18px;
+box-shadow:0 0 18px rgba(255,105,180,0.6);
+transition:0.4s ease;
+}
+
+#prettiest img:hover{
+transform:scale(1.06);
+box-shadow:0 0 35px rgba(255,105,180,0.9);
+}
+
+/* Sparkle effect */
+.sparkle::after{
+content:"✨";
+position:absolute;
+font-size:14px;
+top:10%;
+right:10%;
+animation:sparkleMove 3s infinite ease-in-out;
+opacity:0.7;
+}
+
+@keyframes sparkleMove{
+0%{transform:translateY(0);opacity:0.2;}
+50%{transform:translateY(-10px);opacity:1;}
+100%{transform:translateY(0);opacity:0.2;}
+}
+
+/* Flower rain container */
+.flower-rain{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+}
+
+/* Individual flowers */
+.flower-rain span{
+position:absolute;
+font-size:20px;
+opacity:0.8;
+animation:flowerFall linear infinite;
+}
+
+/* Different starting positions */
+.flower-rain span:nth-child(1){left:5%;animation-duration:10s;}
+.flower-rain span:nth-child(2){left:15%;animation-duration:12s;}
+.flower-rain span:nth-child(3){left:25%;animation-duration:9s;}
+.flower-rain span:nth-child(4){left:35%;animation-duration:11s;}
+.flower-rain span:nth-child(5){left:45%;animation-duration:10s;}
+.flower-rain span:nth-child(6){left:55%;animation-duration:13s;}
+.flower-rain span:nth-child(7){left:65%;animation-duration:8s;}
+.flower-rain span:nth-child(8){left:75%;animation-duration:12s;}
+.flower-rain span:nth-child(9){left:85%;animation-duration:9s;}
+.flower-rain span:nth-child(10){left:95%;animation-duration:11s;}
+.flower-rain span:nth-child(11){left:50%;animation-duration:10s;}
+.flower-rain span:nth-child(12){left:30%;animation-duration:12s;}
+
+/* Falling animation */
+@keyframes flowerFall{
+0%{
+transform:translateY(-100px) rotate(0deg);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(900px) rotate(360deg);
+opacity:0;
+}
+}

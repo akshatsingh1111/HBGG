@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Gungun (GG) ❤️</title>
+
+    <!-- tsParticles library -->
+    <script src="https://cdn.jsdelivr.net/npm/[email protected]/tsparticles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/[email protected]/tsparticles.shape.heart.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Particle Background -->
+<div id="tsparticles"></div>
+
+<!-- Music Player Controls -->
+<div id="musicControls">
+    <button onclick="toggleMainMusic()">🎵 Play / Pause Background Song</button>
+</div>
+
+<audio id="mainTrack" src="./images/paro.mp3"></audio>
+
+<section id="hero">
+    <div class="overlay"></div>
+    <h1>Happy Birthday, Gungun (GG) ❤️</h1>
+    <p>Every moment with you is magicallll✨</p>
+    <button onclick="scrollToGallery()">See Our Moments 📸</button>
+</section>
+
+<section id="gallery">
+    <div class="floating-hearts">
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+</div>
+    <h2>Our Memories</h2>
+
+<p class="memory-hint">
+    Open every photo… each one hides a beautiful memory ❤️
+</p>
+
+<div class="carousel">
+    <div class="carousel">
+        <img src="./images/photo1.jpg" alt="Photo 1" onclick="openLightbox(this, 'song1.mp3')">
+        <img src="./images/photo2.jpg" alt="Photo 2" onclick="openLightbox(this, 'song2.mp3')">
+        <img src="./images/photo3.jpg" alt="Photo 3" onclick="openLightbox(this, 'song3.mp3')">
+        <img src="./images/photo4.jpg" alt="photo 4" onclick="openLightbox(this, 'song4.mp3')">
+        <img src="./images/photo5.jpg" alt="photo 5" onclick="openLightbox(this, 'song5.mp3')">
+    </div>
+</section>
+
+<div id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+        <img id="lightbox-img" src="">
+        <audio id="photoTrack" controls autoplay></audio>
+        <button class="close-btn" onclick="closeLightbox()">✕ Close</button>
+    </div>
+</div>
+<section id="prettiest">
+
+<div class="flower-rain">
+<span>🌹</span>
+<span>🌸</span>
+<span>🌺</span>
+<span>🌼</span>
+<span>🌹</span>
+<span>🌸</span>
+<span>🌺</span>
+<span>🌼</span>
+<span>🌹</span>
+<span>🌸</span>
+<span>🌺</span>
+<span>🌼</span>
+</div>
+
+<h2>The Prettiest Lady</h2>
+
+<p class="beauty-typing" data-text="You're beautiful… in ways words can't fully describe."></p>
+
+<div class="carousel">
+
+<div class="memory-item sparkle">
+<img src="./images/her1.jpg" alt="Her Photo 1">
+<p class="memory-text">A smile that makes the world softer.</p>
+</div>
+
+<div class="memory-item sparkle">
+<img src="./images/her2.jpg" alt="Her Photo 2">
+<p class="memory-text">Beauty that doesn’t need filters.</p>
+</div>
+
+<div class="memory-item sparkle">
+<img src="./images/her3.jpg" alt="Her Photo 3">
+<p class="memory-text">Elegance in the simplest moments.</p>
+</div>
+
+<div class="memory-item sparkle">
+<img src="./images/her4.jpg" alt="Her Photo 4">
+<p class="memory-text">The kind of beauty that stays in memory.</p>
+</div>
+
+<div class="memory-item sparkle">
+<img src="./images/her5.jpg" alt="Her Photo 5">
+<p class="memory-text">No competition for this 🙌.</p>
+</div>
+
+<div class="memory-item sparkle">
+    <img src="./images/her6.jpg" alt="her photo 6"
+    <p class="memory-text">My favourite view.</p>
+</div>
+<div class="memory-item sparkle">
+    <img src="./images/her7.jpg" alt="her photo 7"
+    <p class="memory-text">Okay.. Nice you look beautiful </p>
+</div>
+<div class="memory-item sparkle">
+    <img src="./images/her8.jpg" alt="her photo 8"
+    <p class="memory-text">You look cute when you try to act mad but you actually aren't.</p>
+</div>
+<div class="memory-item sparkle">
+    <img src="./images/her9.jpg" alt="her photo 9"
+    <p class="memory-text"> This Has always been the favourite hoodie of mine just because of a panda.</p>
+</div>
+<div class="memory-item sparkle">
+    <img src="./images/her10.jpg" alt="her photo 10"
+    <p class="memory-text">That mirror selfie is special to me.. after all the fights and arguements, seeing you smile like that in this traditional outfit just felt good.</p>
+</div>
+<div class="memory-item sparkle">
+    <img src="./images/her11.jpg" alt="her photo 11"
+    <p class="memory-text">That jersey had always look amazing on you.. You're making it look way better than it probably should .</p>
+</div>
+<div class="memory-item sparkle">
+    <img src="./images/her12.jpg" alt="her photo 12"
+    <p class="memory-text">Your smile is the kind that could make the stars pause for a second just to admire it.</p>
+</div>
+</section>
+
+<!-- Confetti canvas -->
+<div id="confettiCanvas"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
